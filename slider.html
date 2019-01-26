@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div#A {
+      width: 100%;
+      height: 300px;
+      margin-right: 20px;
+      float: left;
+      margin-bottom:20px;
+    }
+
+    div#B {
+      width: 100%;
+      height: 300px;
+      ;
+      margin-right: 20px;
+      float: left;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="A"></div>
+  <div id="B"></div>
+  <div id="C"></div>
+  <!-- 引入一个外部JS资源 -->
+  <script src="slider.js"></script>
+
+  <script>
+
+    var a = { name: '将军' };
+    a.jiangjun
+    var container = document.getElementById('A');
+    var container1 = document.getElementById('B');
+
+    var imgList = [
+      {
+        url: './img/1.jpg',
+        href: 'https://www.baidu.com'
+      },
+      {
+        url: './img/2.jpg',
+        href: 'https://www.jd.com'
+      },
+      {
+        url: './img/3.jpg',
+        href: 'https://www.taobao.com'
+      }
+    ]
+
+
+    //Slider(container, imgList, 4) 
+    new Slider({ container: container1, imgList: imgList, delayTime: 1 }).init();
+    new Slider({ container, imgList, delayTime: 2 }).init();
+    //Slider(container1,imgList,1);
+    //Slider(container,imgList,1);
+    function aaa() { }
+    new aaa()
+
+
+  </script>
+</body>
+
+</html>
