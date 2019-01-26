@@ -7,20 +7,24 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <style>
+    body{
+      background:lightseagreen;
+    }
     div#A {
-      width: 100%;
-      height: 300px;
-      margin-right: 20px;
-      float: left;
-      margin-bottom:20px;
+      width: 360px;
+      height: 286px;
+      margin:20px auto;
     }
 
     div#B {
-      width: 100%;
-      height: 300px;
-      ;
-      margin-right: 20px;
-      float: left;
+      width: 360px;
+      height: 286px;
+      margin:20px auto;
+    }
+    div#C {
+      width: 360px;
+      height: 286px;
+      margin:20px auto;
     }
   </style>
 </head>
@@ -33,12 +37,9 @@
   <script src="slider.js"></script>
 
   <script>
-
-    var a = { name: '将军' };
-    a.jiangjun
     var container = document.getElementById('A');
     var container1 = document.getElementById('B');
-
+    var container2 = document.getElementById('C');
     var imgList = [
       {
         url: './img/1.jpg',
@@ -53,17 +54,9 @@
         href: 'https://www.taobao.com'
       }
     ]
-
-
-    //Slider(container, imgList, 4) 
-    new Slider({ container: container1, imgList: imgList, delayTime: 1,time:10,dotColor:'green' }).init();
+    new Slider({ container: container1, imgList: imgList, delayTime: 1,time:10,dotColor:'#EEE' }).init();
     new Slider({ container, imgList, delayTime: 2 }).init();
-    //Slider(container1,imgList,1);
-    //Slider(container,imgList,1);
-    function aaa() { }
-    new aaa()
-
-
+    new Slider({ container:container2, imgList, delayTime: 2 }).init();
   </script>
 </body>
 

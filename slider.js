@@ -6,7 +6,8 @@ function Slider (options, container, imgList, time) {
     delayTime: 5,
     dotColor: '#FFF',
     dotActiveColor: 'red',
-    dotRadius: 10
+    dotRadius: 10,
+    dotBottom: 20
   };
 
   Object.assign(this, this.defaultOptions, options);
@@ -123,7 +124,7 @@ function createDom (img) {
 }
 Slider.prototype.createDot = function () {
   var ul = document.createElement('ul');
-  ul.style.cssText = 'position:absolute;bottom:30px;left:50%;z-index:2;transform:translateX(-50%)';
+  ul.style.cssText = 'position:absolute;margin:0;bottom:'+this.dotBottom+'px;left:50%;z-index:2;transform:translateX(-50%)';
   for (var i = 0; i < this.imgList.length; i++) {
     var li = document.createElement('li');
     li.style.width = this.dotRadius + 'px'
