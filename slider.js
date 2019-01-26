@@ -13,7 +13,6 @@ function Slider (options, container, imgList, time) {
   this.timer = null;
   this.index = 0;
   this.imgWrapper = null;
-
   this.dotList = [];
   this.itemList = [];
 };
@@ -39,9 +38,7 @@ Slider.prototype.init = function () {
     console.warn('you need config imgList.');
     return;
   }
-  var initStyle = getComputedStyle(this.container, null)
-
-
+  var initStyle = getComputedStyle(this.container, null);
   this.container.style.position = 'relative';
   this.container.style.overflow = 'hidden';
   this.width = initStyle.width.replace('px', '') - 0;
