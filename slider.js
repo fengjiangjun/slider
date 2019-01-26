@@ -28,7 +28,12 @@ Slider.prototype.loop = function () {
   this.imgWrapper.style.transform = 'translateX(' + (-this.index * this.width) + 'px)';
 }
 
-
+Slider.prototype.go = function(i){
+  var that = this;
+  return function(){
+    window.location.href = that.imgList[i].href;
+  }
+}
 Slider.prototype.init = function () {
   if (!this.imgList || !this.imgList.length) {
     console.warn('you need config imgList.');
@@ -41,7 +46,6 @@ Slider.prototype.init = function () {
   this.container.style.overflow = 'hidden';
   this.width = initStyle.width.replace('px', '') - 0;
   this.height = initStyle.height.replace('px', '') - 0;
-  console.log('width', this.width)
   this.imgWrapper = document.createElement('div');
   this.imgWrapper.style.width = this.width * this.imgList.length + 'px';
   this.imgWrapper.style.height = this.height + 'px';
@@ -51,12 +55,14 @@ Slider.prototype.init = function () {
     div.style.width = this.width + 'px';
     div.style.height = this.height + 'px';
     div.style.left = this.width * i + 'px';
+    div.addEventListener('click', this.go(i));
     this.imgWrapper.appendChild(div);
     this.itemList.push(div);
   }
   var div = this.itemList[0].cloneNode(true);
   this.imgWrapper.appendChild(div);
   div.style.left = this.width * this.imgList.length + 'px';
+  div.addEventListener('click', this.go(0));
   this.itemList.push(div);
   this.container.appendChild(this.imgWrapper);
   this.createDot();
